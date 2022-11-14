@@ -8,7 +8,7 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
           className={`Icon Icon-check ${completed && "Icon-check--active"}`}
           onClick={onComplete}
       >
-        √
+        <img src={process.env.PUBLIC_URL + '/images/completed_button.png'} alt=""/>
       </span>
             <p className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>
                 {text}
