@@ -14,7 +14,7 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
                 {text}
             </p>
             <span className="Icon Icon-delete" onClick={onDelete}>
-        X
+                <img src={process.env.PUBLIC_URL + '/images/close_button.png'} alt=""/>
       </span>
         </li>
     );

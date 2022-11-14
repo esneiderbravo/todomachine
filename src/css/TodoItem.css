@@ -53,3 +53,7 @@
 .Icon-delete:hover {
     color: red;
 }
+.Icon-delete img {
+    height: 70%;
+    width: 70%;
+}
