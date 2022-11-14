@@ -1,5 +1,6 @@
 {
   "name": "todomachine",
+  "homepage": "https://esneiderbravo.github.io/react-gh-pages",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "lint": "^0.7.0"
   }
 }
