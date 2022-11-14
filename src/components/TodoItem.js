@@ -3,7 +3,7 @@ import "../css/TodoItem.css";
 
 function TodoItem({ text, completed, onComplete, onDelete }) {
     return (
-        <li className="TodoItem">
+        <li className={`TodoItem ${completed && "TodoItem-completed"}`}>
       <span
           className={`Icon Icon-check ${completed && "Icon-check--active"}`}
           onClick={onComplete}

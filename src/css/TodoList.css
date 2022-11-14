@@ -3,3 +3,7 @@ ul {
     padding: 0 0 56px 0;
     list-style: none;
 }
+.TodoListSection{
+    justify-content: center; /* align item horizontally */
+    align-items: center; /* align item vertically */
+}

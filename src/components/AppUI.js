@@ -8,6 +8,9 @@ import "../css/AppUI.css";
 import { TodoContext } from "../contexter";
 import { Modal } from "../modal";
 import { TodoForm } from "./TodoForm";
+import {HeaderUI} from "./HeaderUI";
+import "../css/App.css";
+import {WelcomeUI} from "./WelcomeUI";
 
 function AppUI() {
     const {
@@ -17,38 +20,47 @@ function AppUI() {
         completeTodo,
         deleteTodo,
         openModal,
-        setOpenModal,
+        openTodoMachine
     } = React.useContext(TodoContext);
-    return (
-        <React.Fragment>
-            <TodoCounter />
-            <TodoSearch />
-            <TodoList>
-                {error && <p className={"CustomErrors"}>The page have an error!</p>}
-                {loading && <p className={"CustomErrors"}>The page is loading!</p>}
-                {!loading && !searchedTodos.length && (
-                    <p className={"CustomErrors"}>!Please create a new TODO!</p>
+    if (openTodoMachine){
+        return (
+            <React.Fragment>
+                <HeaderUI />
+                <TodoCounter />
+                <TodoSearch />
+                <TodoList>
+                    {error && <p className={"CustomErrors"}>The page have an error!</p>}
+                    {loading && <p className={"CustomErrors"}>The page is loading!</p>}
+                    {!loading && !searchedTodos.length && (
+                        <p className={"CustomErrors"}>!Please create a new TODO!</p>
+                    )}
+
+                    {searchedTodos.map((todo) => (
+                        <TodoItem
+                            key={todo.text}
+                            text={todo.text}
+                            completed={todo.completed}
+                            onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}
+                        />
+                    ))}
+                </TodoList>
+
+                {!!openModal && (
+                    <Modal>
+                        <TodoForm />
+                    </Modal>
                 )}
 
-                {searchedTodos.map((todo) => (
-                    <TodoItem
-                        key={todo.text}
-                        text={todo.text}
-                        completed={todo.completed}
-                        onComplete={() => completeTodo(todo.text)}
-                        onDelete={() => deleteTodo(todo.text)}
-                    />
-                ))}
-            </TodoList>
-
-            {!!openModal && (
-                <Modal>
-                    <TodoForm />
-                </Modal>
-            )}
-
-            <CreateTodoButton />
-        </React.Fragment>
-    );
+                <CreateTodoButton />
+            </React.Fragment>
+        );
+    } else {
+        return (
+            <React.Fragment>
+                <WelcomeUI />
+            </React.Fragment>
+        );
+    }
 }
 export { AppUI };

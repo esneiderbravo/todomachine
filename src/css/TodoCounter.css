@@ -2,5 +2,15 @@
     font-size: 24px;
     text-align: center;
     margin: 0;
-    padding: 48px;
+    padding: 20px;
+}
+
+.TodoCounter-completed{
+    color: green;
+}
+.TodoCounter-in-progress{
+    color: yellow;
+}
+.TodoCounter-initial{
+    color: white;
 }
