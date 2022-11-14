@@ -17,7 +17,7 @@ function WelcomeUI() {
                 <div className={"WelcomeUI"}>
                     <img src={process.env.PUBLIC_URL + '/images/icon.png'} alt=""/>
                     <h1 className={"WelcomeUI-item WelcomeUI-title"}>Welcome to ToDo-Machine</h1>
-                    <button className={"WelcomeUI-item WelcomeUI-button"} onClick={onClickButton}>Press button for open your ToDo List!</button>
+                    <button className={"WelcomeUI-item WelcomeUI-button"} onClick={onClickButton}>Press here!</button>
                 </div>
             </React.Fragment>
         );
