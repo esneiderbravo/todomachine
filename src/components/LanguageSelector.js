@@ -11,7 +11,7 @@ function LanguageSelector() {
     return (
         <div className={"LanguageSelector"}>
             <label htmlFor="">{appLanguage.language}</label>
-            <select onChange={onChangeLanguage} defaultValue={language}>
+            <select className={"LanguageSelector-select"} onChange={onChangeLanguage} defaultValue={language}>
                 <option value="en">{appLanguage.language_1}</option>
                 <option value="es">{appLanguage.language_2}</option>
             </select>

@@ -10,3 +10,8 @@
     color: white;
     font-size: 15px;
 }
+.LanguageSelector-select {
+    color: white;
+    font-weight: bold;
+    background-color: #1e1e1f;
+}
