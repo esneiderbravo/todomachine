@@ -1,19 +1,26 @@
 import React from "react";
-import { useLocalStorage } from "./UseLocalStorage";
+import { useLocalStorage, useSimpleLocalStorage } from "./UseLocalStorage";
+import { LanguageSettings } from "./LanguageSettings";
 
 const TodoContext = React.createContext();
 
 function TodoProvider(props) {
+    const { item: language, saveItem: saveLanguage } = useSimpleLocalStorage(
+        "LANGUAGE",
+        "en"
+    );
+
     const {
         item: todos,
         saveItem: saveTodos,
         loading,
         error,
     } = useLocalStorage("TODOS_V1", []);
+
     const [openTodoMachine, setOpenTodoMachine] = React.useState(false);
     const [searchValue, setSearchValue] = React.useState("");
     const [openModal, setOpenModal] = React.useState(false);
-
+    const appLanguage = LanguageSettings(language);
     const completedTodos = todos.filter((todo) => !!todo.completed).length;
     const totalTodos = todos.length;
 
@@ -68,7 +75,10 @@ function TodoProvider(props) {
                 openModal,
                 setOpenModal,
                 openTodoMachine,
-                setOpenTodoMachine
+                setOpenTodoMachine,
+                appLanguage,
+                language,
+                saveLanguage,
             }}
         >
             {props.children}

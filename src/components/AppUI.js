@@ -8,9 +8,10 @@ import "../css/AppUI.css";
 import { TodoContext } from "../contexter";
 import { Modal } from "../modal";
 import { TodoForm } from "./TodoForm";
-import {HeaderUI} from "./HeaderUI";
+import { HeaderUI } from "./HeaderUI";
 import "../css/App.css";
-import {WelcomeUI} from "./WelcomeUI";
+import { WelcomeUI } from "./WelcomeUI";
+import { LanguageSelector } from "./LanguageSelector";
 
 function AppUI() {
     const {
@@ -20,19 +21,23 @@ function AppUI() {
         completeTodo,
         deleteTodo,
         openModal,
-        openTodoMachine
+        openTodoMachine,
+        appLanguage,
     } = React.useContext(TodoContext);
-    if (openTodoMachine){
+    if (openTodoMachine) {
         return (
             <React.Fragment>
+                <LanguageSelector />
                 <HeaderUI />
                 <TodoCounter />
                 <TodoSearch />
                 <TodoList>
-                    {error && <p className={"CustomErrors"}>The page have an error!</p>}
-                    {loading && <p className={"CustomErrors"}>The page is loading!</p>}
+                    {error && <p className={"CustomErrors"}>{appLanguage.error_msg}</p>}
+                    {loading && (
+                        <p className={"CustomErrors"}>{appLanguage.loading_msg}</p>
+                    )}
                     {!loading && !searchedTodos.length && (
-                        <p className={"CustomErrors"}>!Please create a new TODO!</p>
+                        <p className={"CustomErrors"}>{appLanguage.create_msg}</p>
                     )}
 
                     {searchedTodos.map((todo) => (

@@ -9,7 +9,7 @@
     bottom: 24px;
     right: 24px;
     font-weight: bold;
-    color: #FAFAFA;
+    color: #fafafa;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     width: 42px;
 
     transform: rotate(0);
-    transition: .3s ease;
+    transition: 0.3s ease;
     z-index: 1;
 }
 

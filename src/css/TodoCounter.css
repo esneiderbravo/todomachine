@@ -5,12 +5,12 @@
     padding: 20px;
 }
 
-.TodoCounter-completed{
+.TodoCounter-completed {
     color: green;
 }
-.TodoCounter-in-progress{
+.TodoCounter-in-progress {
     color: yellow;
 }
-.TodoCounter-initial{
+.TodoCounter-initial {
     color: white;
 }

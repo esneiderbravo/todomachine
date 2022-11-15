@@ -4,7 +4,7 @@ import "../css/TodoForm.css";
 
 function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState("");
-    const { addTodo, setOpenModal } = React.useContext(TodoContext);
+    const { addTodo, setOpenModal, appLanguage } = React.useContext(TodoContext);
 
     const onCancel = () => {
         setOpenModal(false);
@@ -22,7 +22,7 @@ function TodoForm() {
     return (
         <form onSubmit={onAdd}>
       <textarea
-          placeholder={"Write the new task"}
+          placeholder={appLanguage.placeholder_create}
           value={newTodoValue}
           onChange={onChange}
       ></textarea>
@@ -32,14 +32,14 @@ function TodoForm() {
                     onClick={onCancel}
                     className="TodoForm-button TodoForm-button--cancel"
                 >
-                    Cancel
+                    {appLanguage.cancel_text}
                 </button>
                 <button
                     type={"submit"}
                     onClick={onAdd}
                     className="TodoForm-button TodoForm-button--add"
                 >
-                    Add
+                    {appLanguage.add_text}
                 </button>
             </div>
         </form>

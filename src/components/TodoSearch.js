@@ -3,7 +3,8 @@ import "../css/TodoSearch.css";
 import { TodoContext } from "../contexter";
 
 function TodoSearch() {
-    const { searchValue, setSearchValue } = React.useContext(TodoContext);
+    const { searchValue, setSearchValue, appLanguage } =
+        React.useContext(TodoContext);
 
     const onSearchValueChange = (event) => {
         setSearchValue(event.target.value);
@@ -12,7 +13,7 @@ function TodoSearch() {
     return (
         <input
             type="text"
-            placeholder={"Write for filter here!"}
+            placeholder={appLanguage.placeholder_search}
             className={"TodoSearch"}
             onChange={onSearchValueChange}
             value={searchValue}

@@ -3,10 +3,11 @@ import "../css/TodoCounter.css";
 import { TodoContext } from "../contexter";
 
 function TodoCounter() {
-    const { completedTodos, totalTodos } = React.useContext(TodoContext);
+    const { completedTodos, totalTodos, appLanguage } =
+        React.useContext(TodoContext);
     let customClass = "";
-    if(completedTodos && totalTodos){
-        const completionPercentage = (completedTodos/totalTodos) * 100;
+    if (completedTodos && totalTodos) {
+        const completionPercentage = (completedTodos / totalTodos) * 100;
         switch (true) {
             case completionPercentage > 0 && completionPercentage < 50:
                 customClass = "TodoCounter-initial";
@@ -18,11 +19,11 @@ function TodoCounter() {
                 customClass = "TodoCounter-completed";
                 break;
         }
-
     }
     return (
         <h2 className={`TodoCounter ${customClass}`}>
-            You has been completed {completedTodos} of {totalTodos} TODOs
+            {appLanguage.counter_text_1} {completedTodos} {appLanguage.counter_text_2}{" "}
+            {totalTodos} {appLanguage.counter_text_3}
         </h2>
     );
 }

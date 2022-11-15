@@ -37,4 +37,22 @@ function useLocalStorage(itemName, initialValue) {
     return { item, saveItem, loading, error };
 }
 
-export { useLocalStorage };
+function useSimpleLocalStorage(itemName, initialValue) {
+    const localStorageItem = localStorage.getItem(itemName);
+    let value;
+    if (!localStorageItem) {
+        localStorage.setItem(itemName, initialValue);
+        value = initialValue;
+    } else {
+        value = localStorageItem;
+    }
+    const saveItem = (itemValue) => {
+        localStorage.setItem(itemName, itemValue);
+        setItem(itemValue);
+    };
+
+    const [item, setItem] = React.useState(value);
+
+    return { item, saveItem };
+}
+export { useLocalStorage, useSimpleLocalStorage };

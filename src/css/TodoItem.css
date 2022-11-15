@@ -9,7 +9,7 @@
     width: auto;
 }
 
-.TodoItem-completed{
+.TodoItem-completed {
     background-color: green;
     color: white;
 }

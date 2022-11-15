@@ -1,0 +1,36 @@
+{
+    "en": {
+        "language": "Language: ",
+        "language_1": "English",
+        "language_2": "Spanish",
+        "welcome_message": "Welcome to ToDo-Machine",
+        "welcome_button": "Press here!",
+        "counter_text_1": "You has been completed",
+        "counter_text_2": "of",
+        "counter_text_3": "TODOs",
+        "placeholder_search": "Write for filter here!",
+        "error_msg": "The page have an error!",
+        "loading_msg": "The page is loading!",
+        "create_msg": "!Please create a new TODO!",
+        "placeholder_create": "Write the new task",
+        "cancel_text": "Cancel",
+        "add_text": "Add"
+    },
+    "es": {
+        "language": "Idioma: ",
+        "language_1": "Ingles",
+        "language_2": "Español",
+        "welcome_message": "Bienvenido a ToDo-Machine",
+        "welcome_button": "Da click aqui!",
+        "counter_text_1": "Tu has completado",
+        "counter_text_2": "de",
+        "counter_text_3": "TODOs",
+        "placeholder_search": "Escribe aqui para filtrar!",
+        "error_msg": "La app tiene un error desconocido!",
+        "loading_msg": "Espera un poco la app esta cargando tu informacion!",
+        "create_msg": "!Por favor, crea un nuevo TODO!",
+        "placeholder_create": "Escribe una nueva tarea",
+        "cancel_text": "Cancelar",
+        "add_text": "Crear"
+    }
+}
